@@ -1,0 +1,7 @@
+{
+  "name": "CrawlerWeb",
+  "format": "JSON/BINARY",
+  "type": "TCP/UDP",
+  "port": 55555,
+  "priority": 1
+}
