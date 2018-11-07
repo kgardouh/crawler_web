@@ -1,0 +1,7 @@
+from dbb import *
+
+x = Base_donnee()
+#x.insertion("Langage informatique", "C++", "Vas-URL C++ entree")
+resultat= x.selection("chat")
+print("Selection 1 ligne:" +resultat[0])
+print

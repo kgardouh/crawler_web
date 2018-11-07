@@ -1,0 +1,251 @@
+cat (Unix)
+Un article de Wikipédia, l'encyclopédie libre.
+Sauter à la navigation
+Sauter à la recherche
+Pour les articles homonymes, voir CAT.
+Cat
+Informations
+Type
+Utilitaire UNIX (d)
+modifier - modifier le code - voir wikidata
+cat, qui vient de l'anglais catenate, synonyme de concatenate (soit : « concaténer »), est une commande Unix standard permettant de concaténer des fichiers ainsi que d'afficher leur contenu sur la sortie standard — habituellement un terminal Unix ; le plus souvent des « shells », notamment Bash, zsh, Csh, etc.
+tac (en) est l'équivalent de cat mais affiche le contenu d'un fichier de la fin au début.
+Dans les systèmes Microsoft, son équivalent est la commande type (en).
+Sommaire
+1 Exemples
+2 Spécifications
+2.1 Extensions
+3 Un peu de culture Unix
+3.1 Définition du Jargon File
+3.2 Cat et UUOC
+4 Liens externes
+4.1 Manuels
+Exemples[modifier | modifier le code]
+Pour visualiser un fichier :
+cat fichier.txt
+Pour visualiser deux fichiers concaténés :
+cat fichier1.txt fichier2.txt
+Spécifications[modifier | modifier le code]
+Les "Single UNIX Specification" (spécifications du standard UNIX) ont déterminé que le comportement de la commande serait d'afficher le contenu de chacun des fichiers donnés en argument sur la sortie standard en une seule et même séquence. Utilisée avec l'option "-u" (non utilisée par la version GNU), cette commande affiche chaque octet (byte en anglais) dès qu'il est lu,
+sans utiliser de mémoire tampon (buffer).
+Si l'option "-" est appliquée, cat lira l'entrée standard (exemple : clavier) et l'affichera dans la séquence de sortie. S'il n'y a aucun fichier en argument, cat lira à partir de l'entrée standard.
+cat permet donc l'affichage rapide et passif du contenu d'un fichier.
+Différentes erreurs peuvent être rencontrées :
+- Permission denied (si l'utilisateur n'a pas le droit de lire le fichier)
+- Is a directory (si l'utilisateur tente de lire un dossier)
+- Operation not supported (si l'action est impossible pour tout autre raison)
+Extensions[modifier | modifier le code]
+Les deux versions BSD et la version GNU coreutils de cat supportent les options suivantes :
+-b (GNU seulement : --number-nonblank), numéroter les lignes non-blanches en sortie.
+-n (GNU seulement : --number), numéroter les lignes en sortie.
+-s (GNU seulement : --squeeze-blank), fusionne en une seule toutes les lignes blanches qui se suivent.
+-v (GNU seulement : --show-nonprinting), affiche les caractères non-imprimables comme s'ils étaient visibles à l'exception des tabulations et des caractères de fin de ligne (EOL : End Of Line).
+-t avec BSD ou -T avec GNU, a le même comportement que -v mais affiche aussi les tabulations sous forme de ^I.
+-e avec BSD ou -E avec GNU, a le même comportement que -v mais affiche aussi les caractères de fin de ligne sous la forme $.
+Un peu de culture Unix[modifier | modifier le code]
+Définition du Jargon File[modifier | modifier le code]
+Le « Jargon File », dans sa version 4.3.3, définit la commande cat comme suit :
+Pour les fans d'Unix, cat est considéré comme un excellent exemple de ce qu'est une conception « User-interface » parce que, d'une part, elle donne le contenu du fichier sans caractère complément inopiné comme une espace ou des séparateurs entre les fichiers et, d'autre part, elle ne nécessite pas que le fichier soit constitué de lignes de texte mais fonctionne avec n'importe quel type de donnée.
+Pour les détracteurs d'Unix, cat est considéré comme l'archétype d'une mauvaise conception « User-interface » car son nom est particulièrement mal choisi. En effet, cette commande est bien plus utilisée pour afficher un unique fichier sur la sortie standard que pour concaténer plusieurs fichiers. De fait, le nom cat est donc aussi non-intuitif que le nom de la commande cdr en Lisp par exemple qui, elle, a pour but d'extraire un pointeur.
+Cat et UUOC[modifier | modifier le code]
+UUOC, extrait de comp.unix.shell sur Usenet, signifie « Useless Use of cat » (soit : utilisation inutile de cat).
+Comme certains de comp.unix.shell le firent remarquer, le but de la commande cat est de concaténer des fichiers. Si elle est utilisée sur seulement un fichier, c'est une perte de temps et un surcoût inutile de ressources :
+« The purpose of cat is to concatenate (or 'catenate') files. If it's only one file, concatenating it with nothing at all is a waste of time, and costs you a process »
+Exemples d'UUOC
+On voit faire :
+cat file | autres_commandes avec leurs arguments
+au lieu de :
+<file autres_commandes avec leurs arguments
+ou plus classiquement :
+autres_commandes avec leurs arguments <file
+qui font la même chose mais sont moins chers en termes de ressources.
+Depuis 1995, des récompenses sont remises occasionnellement pour les meilleures utilisations inutiles de cat (UUOC). Il arrive souvent que Randal L. Schwartz (en), auteur de nombreux livres sur Perl et consultant en programmation, remette ces récompenses. Il y a d'ailleurs un site Web consacré uniquement à l'UUOC Award ainsi qu'à d'autres récompenses similaires.
+Pour les hackers, l'activité de supprimer des UUOC est parfois appelé demoggification (« Moggy » étant un terme d'anglais du Commonwealth désignant affectueusement un chat domestique, « a cat »).
+Liens externes[modifier | modifier le code]
+(en) « Single Unix Specification » de cat
+(en) UUOC Awards
+Manuels[modifier | modifier le code]
+(fr) Page man de la commande cat
+(en) Manuel de cat d'OpenBSD
+v · mCommandes Unix
+Aide
+arch
+apropos
+help
+file
+history
+info
+man
+type
+uname
+whatis
+Environnement utilisateur
+env
+dmesg
+finger
+halt
+id
+init
+logname
+mesg
+passwd
+reboot
+shutdown
+su
+sudo
+talk
+uptime
+w
+wall
+who
+whoami
+write
+Gestion de processus
+at
+bg
+chroot
+crontab
+disown
+exit
+fg
+htop
+iowait
+kill
+nice
+nohup
+pkill
+ps
+pstree
+sleep
+time
+top
+Manipulation de texte
+awk (gawk)
+banner
+bash
+cat
+clear
+cut
+ed
+ex
+head
+join
+nl
+read
+sed
+sort
+strings
+tail
+tee
+tr
+uniq
+vi
+vim
+wc
+Programmation shell
+alias
+basename
+dirname
+echo
+expr
+false
+printf
+set
+test
+true
+unset
+wait
+Recherche
+find
+grep
+locate
+whereis
+which
+Réseau
+cURL
+ethtool
+ftp
+host
+ifconfig
+mail
+mailx
+mii-tool
+nc
+netstat
+ping
+rlogin
+ssh
+sftp
+telnet
+traceroute
+wget
+Système de fichiers
+cd
+chgrp
+chmod
+chown
+cp
+dd
+dir
+du
+df
+file
+less
+ln
+ls
+lsof
+mkdir
+more
+mount
+mv
+pwd
+rm
+rmdir
+split
+touch
+tree
+umask
+umount
+Divers
+bc
+dc
+cal
+date
+fc
+lp
+lpr
+md5sum
+Portail de l’informatique
+Ce document provient de « https://fr.wikipedia.org/w/index.php?title=Cat_(Unix)&oldid=125336753 ».
+Catégorie : Commande UnixCatégories cachées : Page utilisant P31Article contenant un appel à traduction en anglaisPortail:Informatique/Articles liés
+Menu de navigation
+Outils personnels
+Non connectéDiscussionContributionsCréer un compteSe connecter
+Espaces de noms
+ArticleDiscussion
+Variantes
+Affichages
+LireModifierModifier le codeVoir l’historique
+Plus
+Rechercher
+Navigation
+AccueilPortails thématiquesArticle au hasardContact
+Contribuer
+Débuter sur WikipédiaAideCommunautéModifications récentesFaire un don
+Outils
+Pages liéesSuivi des pages liéesImporter un fichierPages spécialesLien permanentInformations sur la pageÉlément WikidataCiter cette page
+Imprimer / exporter
+Créer un livreTélécharger comme PDFVersion imprimable
+Dans d’autres langues
+العربيةAzərbaycancaБеларускаяCatalàČeštinaDanskDeutschΕλληνικάEnglishEspañolفارسیעבריתहिन्दीHrvatskiMagyarItaliano日本語한국어മലയാളംBahasa MelayuNederlandsPolskiPortuguêsRomânăРусскийSlovenščinaSvenskaTürkçeУкраїнськаTiếng Việt中文
+Modifier les liens
+La dernière modification de cette page a été faite le 16 avril 2016 à 14:31.
+Droit d'auteur : les textes sont disponibles sous licence Creative Commons attribution, partage dans les mêmes conditions ; d’autres conditions peuvent s’appliquer. Voyez les conditions d’utilisation pour plus de détails, ainsi que les crédits graphiques. En cas de réutilisation des textes de cette page, voyez comment citer les auteurs et mentionner la licence.
+Wikipedia® est une marque déposée de la Wikimedia Foundation, Inc., organisation de bienfaisance régie par le paragraphe 501(c)(3) du code fiscal des États-Unis.
+Politique de confidentialité
+À propos de Wikipédia
+Avertissements
+Contact
+Développeurs
+Déclaration sur les témoins (cookies)
+Version mobile

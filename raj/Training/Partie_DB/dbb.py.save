@@ -1,0 +1,17 @@
+import sqlite3
+
+class Base_donnee:
+    def __init__(self):
+       self.connection = 0
+       self.cursor = 0
+       self.connection = sqlite3.connect("baseDoc.db")
+       self.cursor = self.connection.cursor()
+       self.lesvaleurs = []
+       self.urlRecu = ""
+
+    def insertion(self, mot1, mot2, url):
+       self.lesvaleurs = [mot1, mot2]
+       self.cursor.execute('insert into theme(mot, synonyme) values(?,?)', self.lesvaleurs)
+       self.connection.commit()
+       self.cursor.execute('insert into documentation(url) values(?)', url)
+       

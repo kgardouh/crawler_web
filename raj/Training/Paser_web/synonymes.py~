@@ -1,0 +1,16 @@
+import bs4 as bs
+import urllib.request
+
+class synonymes:
+    def __init__(self, mot):
+        self.syn = ""
+        self.SynWord = ""
+        self.site = 'http://www.cnrl.fr/lexicographie/' + mot
+        self.src = urllib.request.urlopen(self.site)
+        self.soup = bs.BeautifulSoup(self.src, 'lxml')
+
+    def RechercheSyn(self):
+        self.syn = soup.find('span',{'class':'tlf_csynonime'})
+        self.SynWord = syn.i.getText()
+        
+        return self.SynWord
